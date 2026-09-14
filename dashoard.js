@@ -6,6 +6,7 @@ const client = new Paho.MQTT.Client(
     porta,
     clientId
 ); 
+
 const status = document.getElementById("mqtt-status"); 
 const statusDot = document.getElementById("status-dot");
 const temperatura = document.getElementById("temperatura");
