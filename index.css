@@ -330,4 +330,15 @@ main {
     font-weight: bold;
     border-radius: 10px;
     box-shadow: 0 4px 15px #00000020;
+} 
+footer {
+    margin-top: 35px;
+    background-color: #0b2638;
+    color: #dce8ee;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    font-size: 15px;
 }
