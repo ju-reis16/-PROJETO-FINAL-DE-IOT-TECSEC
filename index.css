@@ -253,3 +253,46 @@ main {
 .dashboard-titulo p {
     color: #d6e7ef;
 }
+.dashboard-titulo + .cards {
+    margin-top: 0;
+}
+
+.dashboard-titulo + .cards .card {
+    padding: 28px 20px;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-titulo + .cards .card::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: -30px;
+    bottom: -30px;
+    border-radius: 50%;
+    background-color: #eef5f8;
+}
+
+.dashboard-titulo + .cards .card h3 {
+    color: #334e68;
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.dashboard-titulo + .cards .card strong {
+    display: block;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 42px;
+    color: #123b56;
+    margin-bottom: 12px;
+}
+
+.dashboard-titulo + .cards .card p {
+    color: #7b8794;
+    font-size: 14px;
+}
