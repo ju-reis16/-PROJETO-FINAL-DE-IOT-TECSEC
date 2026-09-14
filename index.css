@@ -316,4 +316,18 @@ main {
 
 .dashboard-titulo + .cards .card.qualidade strong {
     color: #65727c;
+} 
+.banner {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #081c2c, #123b56);
+    color: white;
+    text-align: center;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #00000020;
 }
