@@ -6,14 +6,15 @@ const client = new Paho.MQTT.Client(
     porta,
     clientId
 ); 
-const status = document.getElementById("status");
+const status = document.getElementById("mqtt-status"); 
+const statusDot = document.getElementById("status-dot");
 const temperatura = document.getElementById("temperatura");
 const umidade = document.getElementById("umidade");
 const qualidadeAr = document.getElementById("qualidade-ar");
 
 client.onConnectionLost = function () {
     status.textContent = "● Desconectado";
-    status.className = "status desconectado";
+    statusDot.className = "status-dot desconectado";
 };
 
 client.onMessageArrived = function (message) {
@@ -36,6 +37,7 @@ function conectarMQTT() {
         onSuccess: function () {
             status.textContent = "● Conectado";
             status.className = "status conectado";
+            statusDot.className = "status-dot conectado";
             client.subscribe(
                 "aulas/professortupi/temperatura"
             );
@@ -50,7 +52,7 @@ function conectarMQTT() {
          onFailure: function (erro) {
             console.error("Erro MQTT:", erro);
             status.textContent = "● Desconectado";
-            status.className = "status desconectado";
+            statusDot.className = "status-dot desconectado";
             setTimeout(conectarMQTT, 3000);
         }
     });
