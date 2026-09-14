@@ -36,7 +36,6 @@ function conectarMQTT() {
         useSSL: false,
         onSuccess: function () {
             status.textContent = "● Conectado";
-            status.className = "status conectado";
             statusDot.className = "status-dot conectado";
             client.subscribe(
                 "aulas/professortupi/temperatura"
