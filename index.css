@@ -342,3 +342,27 @@ footer {
 footer p {
     font-size: 15px;
 }
+@media (max-width: 900px) {
+
+    .topo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .informacoes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-titulo + .cards {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
