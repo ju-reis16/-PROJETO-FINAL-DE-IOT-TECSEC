@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estação de Monitoramento IoT</title>
+
+    <link rel="stylesheet" href="index.css">
+
+<script src="https://unpkg.com/paho-mqtt@1.1.0/paho-mqtt-min.js"></script>
+</head>
+
+<body>
+
+    
+    <header>
+
+        <div class="topo">
+
+            <div class="identificacao">
+
+                <h1>Estação de Monitoramento IoT</h1>
+
+                <p>Grupo TecSec — SENAI Vinhedo</p>
+
+                <p>Turma: 3° ano SENAI</p>
+
+            </div>
+
+         
+            <div id="status" class="status desconectado">
+                🔴 Desconectado
+            </div>
+
+        </div>
+
+
+    
+        <nav>
+
+            <button onclick="mostrarPagina('sobre')">
+                Sobre o Projeto
+            </button>
+
+            <button onclick="mostrarPagina('dashboard')">
+                Dashboard Ao Vivo
+            </button>
+
+        </nav>
+
+    </header>
+
