@@ -107,3 +107,21 @@
 
         </section>
 
+        <section id="arquitetura" class="secao">
+
+            <article class="arquitetura">
+
+                <h2>Arquitetura do Projeto</h2>
+
+                <p>
+                    O ESP32 coleta os dados dos sensores e envia as informações
+                    para o broker Mosquitto utilizando o protocolo MQTT.
+                </p>
+
+                <p>
+                    O Dashboard Web recebe essas informações através de
+                    WebSockets e atualiza os valores apresentados na tela
+                    em tempo real.
+                </p>
+
+                <div class="fluxo">
