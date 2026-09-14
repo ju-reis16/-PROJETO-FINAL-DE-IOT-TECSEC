@@ -168,4 +168,7 @@ main {
 .card p {
     color: #52606d;
     line-height: 1.6;
+} 
+.arquitetura {
+    border-left: 5px solid #2498c7;
 }
