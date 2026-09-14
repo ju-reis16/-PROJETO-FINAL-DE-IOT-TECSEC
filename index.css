@@ -16,3 +16,38 @@ body {
     color: #263238;
     line-height: 1.6;
 }
+header {
+    background: linear-gradient(135deg, #081c2c, #123b56);
+    color: white;
+    padding: 25px 0 8px;
+    box-shadow: 0 4px 15px #00000025;
+}
+
+.topo {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.topo h1 {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.topo h1::before {
+    content: "◉";
+    color: #36c5f0;
+    margin-right: 10px;
+}
+
+.topo p {
+    color: #c9d8e3;
+    margin: 3px 0;
+}
