@@ -17,14 +17,17 @@ body {
     line-height: 1.6;
 }
 
-header {
+header,
+.cabecalho,
+.header {
     background: linear-gradient(135deg, #081c2c, #123b56);
     color: white;
     padding: 25px 0 8px;
     box-shadow: 0 4px 15px #00000025;
 }
 
-.topo {
+.topo,
+.header-content {
     width: 90%;
     max-width: 1150px;
     margin: auto;
@@ -34,7 +37,7 @@ header {
     gap: 30px;
 }
 
-.topo h1 {
+.identificacao h1 {
     font-family: 'Orbitron', Arial, sans-serif;
     font-size: 28px;
     font-weight: 600;
@@ -42,18 +45,19 @@ header {
     margin-bottom: 10px;
 }
 
-.topo h1::before {
+.identificacao h1::before {
     content: "◉";
     color: #36c5f0;
     margin-right: 10px;
 }
 
-.topo p {
+.identificacao p {
     color: #c9d8e3;
     margin: 3px 0;
 }
 
-nav {
+nav,
+.menu {
     width: 90%;
     max-width: 1150px;
     margin: 20px auto 0;
@@ -62,7 +66,8 @@ nav {
     align-items: flex-end;
 }
 
-nav a {
+nav a,
+.menu a {
     background-color: #174766;
     color: white;
     text-decoration: none;
@@ -74,7 +79,10 @@ nav a {
     white-space: nowrap;
 }
 
-nav a:hover {
+nav a:hover,
+.menu a:hover,
+nav a.active,
+.menu a.active {
     background-color: #24749e;
 }
 
@@ -88,21 +96,24 @@ main {
     margin-bottom: 45px;
 }
 
-.introducao,
-.arquitetura,
-.alertas {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #d7e3e9;
-    box-shadow: 0 4px 15px #00000012;
+.pagina {
+    display: none;
+}
+
+.pagina.ativa {
+    display: block;
 }
 
 .introducao {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
     border-left: 5px solid #2498c7;
+    box-shadow: 0 4px 15px #00000012;
 }
 
-.secao h2 {
+.introducao h2 {
     font-family: 'Orbitron', Arial, sans-serif;
     color: #123b56;
     font-size: 24px;
@@ -111,59 +122,86 @@ main {
     margin-bottom: 14px;
 }
 
-.introducao p,
-.arquitetura p {
+.introducao p {
     color: #52606d;
     line-height: 1.7;
     margin-bottom: 12px;
 }
 
+.informacoes,
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
-    margin-top: 20px;
 }
 
+.info,
 .card {
     background-color: white;
     padding: 22px;
-    text-align: center;
     border-radius: 12px;
     border: 1px solid #d7e3e9;
     box-shadow: 0 4px 15px #00000012;
     transition: 0.3s;
 }
 
+.info:hover,
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 7px 18px #00000018;
 }
 
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    background-color: #f4f7fa;
+.info {
+    border-top: 4px solid #2498c7;
 }
 
+.info h3,
 .card h3 {
     color: #123b56;
-    font-family: 'Orbitron', Arial, sans-serif;
-    font-size: 19px;
+    font-size: 20px;
     margin-bottom: 12px;
     letter-spacing: 0.5px;
 }
 
+.info p,
 .card p {
     color: #52606d;
     line-height: 1.6;
 }
 
+.info img,
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-top: 18px;
+    border-radius: 8px;
+    background-color: #f4f7fa;
+}
+
+.info.arquitetura {
+    grid-column: 1 / 4;
+}
+
 .arquitetura {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
     border-left: 5px solid #2498c7;
+    box-shadow: 0 4px 15px #00000012;
+}
+
+.arquitetura h2 {
+    font-family: 'Orbitron', Arial, sans-serif;
+    color: #123b56;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.arquitetura p {
+    color: #52606d;
+    line-height: 1.7;
+    margin-bottom: 12px;
 }
 
 .fluxo {
@@ -182,12 +220,33 @@ main {
     margin: 0;
 }
 
+.fluxo span {
+    background-color: #e3f2f9;
+    color: #123b56;
+    padding: 11px 16px;
+    border-radius: 7px;
+    font-weight: bold;
+    border: 1px solid #b9dce9;
+}
+
+.fluxo strong {
+    color: #2498c7;
+    font-size: 22px;
+}
+
 .alertas {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
     border-left: 5px solid #d49b45;
+    box-shadow: 0 4px 15px #00000012;
 }
 
 .alertas h2 {
+    font-family: 'Orbitron', Arial, sans-serif;
     color: #b27a26;
+    font-size: 24px;
+    margin-bottom: 14px;
 }
 
 .alertas ul {
@@ -197,20 +256,6 @@ main {
 .alertas li {
     color: #52606d;
     margin: 8px 0;
-}
-
-.rodape {
-    margin-top: 50px;
-    padding: 25px 7%;
-    background-color: #06141f;
-    border-top: 2px solid #1c5268;
-    text-align: center;
-}
-
-.rodape p {
-    color: #9fbac4;
-    font-size: 14px;
-    margin: 5px 0;
 }
 
 .status {
@@ -231,171 +276,6 @@ main {
     color: #9bf0b5;
 }
 
-.banner {
-    width: 90%;
-    max-width: 1150px;
-    margin: 35px auto 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #081c2c, #123b56);
-    color: white;
-    text-align: center;
-    font-family: 'Orbitron', Arial, sans-serif;
-    font-size: 17px;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px #00000020;
-}
-
-footer {
-    margin-top: 35px;
-    background-color: #0b2638;
-    color: #dce8ee;
-    text-align: center;
-    padding: 25px;
-}
-
-footer p {
-    font-size: 15px;
-}
-
-@media (max-width: 900px) {
-
-    .topo {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .informacoes {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .cards {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    nav {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 600px) {
-
-    header {
-        padding-top: 22px;
-        padding-bottom: 8px;
-    }
-
-    .topo h1 {
-        font-size: 23px;
-    }
-
-    nav {
-        flex-direction: column;
-        margin-top: 18px;
-        gap: 6px;
-        align-items: stretch;
-    }
-
-    nav a {
-        width: 100%;
-        text-align: center;
-        padding: 9px 15px;
-        border-radius: 6px;
-    }
-
-    main {
-        width: 94%;
-        margin-top: 25px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .introducao,
-    .arquitetura,
-    .alertas,
-    .card {
-        padding: 20px;
-    }
-
-    .fluxo p {
-        line-height: 2;
-    }
-
-    .banner {
-        width: 94%;
-        font-size: 14px;
-    }
-}
-
-
-/* ==============================
-   DASHBOARD
-   ============================== */
-
-.header {
-    background: linear-gradient(135deg, #081c2c, #123b56);
-    color: white;
-    padding: 25px 0 15px;
-    box-shadow: 0 4px 15px #00000025;
-}
-
-.header-content {
-    width: 90%;
-    max-width: 1150px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon {
-    font-size: 32px;
-}
-
-.logo-area h1 {
-    font-family: 'Orbitron', Arial, sans-serif;
-    font-size: 25px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.logo-area p {
-    color: #c9d8e3;
-    font-size: 14px;
-}
-
-.menu {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.menu a {
-    background-color: #174766;
-    color: white;
-    text-decoration: none;
-    padding: 9px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 7px;
-    transition: 0.3s;
-}
-
-.menu a:hover,
-.menu a.active {
-    background-color: #24749e;
-}
-
 .main {
     width: 90%;
     max-width: 1150px;
@@ -404,16 +284,15 @@ footer p {
 
 .intro {
     background-color: white;
-    padding: 28px 30px;
+    padding: 30px;
     border-radius: 12px;
-    border: 1px solid #d7e3e9;
+    border-left: 5px solid #2498c7;
     box-shadow: 0 4px 15px #00000012;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 25px;
     margin-bottom: 25px;
-    border-left: 5px solid #2498c7;
 }
 
 .tag {
@@ -428,8 +307,8 @@ footer p {
 .intro h2 {
     font-family: 'Orbitron', Arial, sans-serif;
     color: #123b56;
-    font-size: 25px;
-    margin-bottom: 8px;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .intro p {
@@ -440,7 +319,7 @@ footer p {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 18px;
+    padding: 11px 18px;
     border-radius: 25px;
     background-color: #f4f7fa;
     border: 1px solid #d7e3e9;
@@ -556,12 +435,12 @@ footer p {
 }
 
 .alerts-section {
-    margin-bottom: 30px;
     background-color: white;
     padding: 28px 30px;
     border-radius: 12px;
     border: 1px solid #d7e3e9;
     box-shadow: 0 4px 15px #00000012;
+    margin-bottom: 30px;
 }
 
 .section-title h3 {
@@ -634,7 +513,7 @@ footer p {
 }
 
 .info-card p {
-    color: #7b8993;
+    color: #7b8794;
     font-size: 13px;
 }
 
@@ -642,7 +521,7 @@ footer p {
     width: 90%;
     max-width: 1150px;
     margin: 35px auto 0;
-    padding: 22px 28px;
+    padding: 20px;
     background: linear-gradient(135deg, #081c2c, #123b56);
     color: white;
     border-radius: 10px;
@@ -673,6 +552,22 @@ footer p {
     font-size: 32px;
 }
 
+.banner {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #081c2c, #123b56);
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #00000020;
+}
+
+footer,
+.rodape,
 .footer {
     margin-top: 35px;
     background-color: #0b2638;
@@ -681,7 +576,131 @@ footer p {
     padding: 25px;
 }
 
+footer p,
+.rodape p,
 .footer p {
     font-size: 14px;
     margin: 4px 0;
+}
+
+@media (max-width: 900px) {
+
+    .topo,
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .status {
+        margin-bottom: 5px;
+    }
+
+    .informacoes,
+    .cards,
+    .sensors {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info.arquitetura {
+        grid-column: 1 / 3;
+    }
+
+    nav,
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .intro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .alert-grid,
+    .info-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header,
+    .cabecalho,
+    .header {
+        padding-top: 22px;
+        padding-bottom: 8px;
+    }
+
+    .identificacao h1,
+    .logo-area h1 {
+        font-size: 23px;
+    }
+
+    nav,
+    .menu {
+        flex-direction: column;
+        margin-top: 18px;
+        gap: 6px;
+        align-items: stretch;
+    }
+
+    nav a,
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 9px 15px;
+        border-radius: 6px;
+    }
+
+    main,
+    .main {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+    .informacoes,
+    .cards,
+    .sensors,
+    .alert-grid,
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .info.arquitetura {
+        grid-column: auto;
+    }
+
+    .introducao,
+    .info,
+    .card,
+    .arquitetura,
+    .alertas,
+    .intro,
+    .alerts-section,
+    .sensor-card,
+    .info-card {
+        padding: 20px;
+    }
+
+    .fluxo {
+        flex-direction: column;
+    }
+
+    .fluxo strong {
+        transform: rotate(90deg);
+    }
+
+    .project-banner,
+    .banner {
+        width: 94%;
+        font-size: 14px;
+    }
+
+    .project-banner h2 {
+        font-size: 15px;
+    }
+
+    .sensor-value {
+        font-size: 36px;
+    }
 }

@@ -8,16 +8,14 @@
     <title>Estação de Monitoramento IoT</title>
 
     <link rel="stylesheet" href="index.css">
-
-<script src="https://unpkg.com/paho-mqtt@1.1.0/paho-mqtt-min.js"></script>
 </head>
 
 <body>
 
-    
-    <header>
+    <header class="cabecalho">
 
         <div class="topo">
+             <div class="topo">
 
             <div class="identificacao">
 
@@ -28,18 +26,12 @@
                 <p>Turma: 3° ano SENAI</p>
 
             </div>
-
-         
-            <div id="status" class="status desconectado">
-                🔴 Desconectado
-            </div>
-
         </div>
 
           <nav class="menu">
-                <a href="index.html">Início</a>
+                <a href="index.html"class="active">Início</a>
                 <a href="sobre.html">Sobre o Projeto</a>
-                <a href="dashboard.html" class="active">Dashboard Ao Vivo</a>
+                <a href="dashboard.html">Dashboard Ao Vivo</a>
             </nav>
             
     </header>
@@ -175,7 +167,7 @@
     </footer>
 
 
-    <script src="index.js"></script>
+    <script src="dashboard.js"></script>
 
 </body>
 
