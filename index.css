@@ -96,4 +96,33 @@ main {
 
 .secao {
     margin-bottom: 45px;
+} 
+.introducao,
+.arquitetura,
+.alertas {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #d7e3e9;
+    box-shadow: 0 4px 15px #00000012;
+}
+
+.introducao {
+    border-left: 5px solid #2498c7;
+}
+
+.secao h2 {
+    font-family: 'Orbitron', Arial, sans-serif;
+    color: #123b56;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.introducao p,
+.arquitetura p {
+    color: #52606d;
+    line-height: 1.7;
+    margin-bottom: 12px;
 }
