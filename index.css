@@ -366,3 +366,58 @@ footer p {
         flex-wrap: wrap;
     }
 }
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 22px;
+        padding-bottom: 8px;
+    }
+
+    .topo h1 {
+        font-size: 23px;
+    }
+
+    nav {
+        flex-direction: column;
+        margin-top: 18px;
+        gap: 6px;
+        align-items: stretch;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 9px 15px;
+        border-radius: 6px;
+    }
+
+    main {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .introducao,
+    .arquitetura,
+    .alertas,
+    .card,
+    .dashboard-titulo {
+        padding: 20px;
+    }
+
+    .fluxo p {
+        line-height: 2;
+    }
+
+    .dashboard-titulo + .cards .card strong {
+        font-size: 36px;
+    }
+
+    .banner {
+        width: 94%;
+        font-size: 14px;
+    }
+}
