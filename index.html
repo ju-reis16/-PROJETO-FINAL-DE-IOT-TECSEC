@@ -36,20 +36,12 @@
 
         </div>
 
-
-    
-        <nav>
-
-            <button onclick="mostrarPagina('sobre')">
-                Sobre o Projeto
-            </button>
-
-            <button onclick="mostrarPagina('dashboard')">
-                Dashboard Ao Vivo
-            </button>
-
-        </nav>
-
+          <nav class="menu">
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre o Projeto</a>
+                <a href="dashboard.html" class="active">Dashboard Ao Vivo</a>
+            </nav>
+            
     </header>
     <main>
 <section id="sobre" class="pagina ativa">
@@ -158,75 +150,6 @@
                         <span>Dashboard</span>
 
                     </div>
-
-                </article>
-
-            </section>
-
-        </section>
-
-
-        
-
-        <section id="dashboard" class="pagina">
-
-            <div class="dashboard-titulo">
-
-                <h2>Dashboard Ao Vivo</h2>
-
-                <p>
-                    Dados recebidos em tempo real através do MQTT.
-                </p>
-
-            </div>
-
-
-       
-            <section class="cards">
-
-
-         
-                <article class="card temperatura">
-
-                    <h3>🌡️ Temperatura</h3>
-
-                    <strong id="temperatura">
-                        -- °C
-                    </strong>
-
-                    <p>
-                        Limite de alerta: 28°C
-                    </p>
-
-                </article>
-
-
-                <article class="card umidade">
-
-                    <h3>💧 Umidade</h3>
-
-                    <strong id="umidade">
-                        -- %
-                    </strong>
-
-                    <p>
-                        Limite de alerta: 56%
-                    </p>
-
-                </article>
-
-
-                <article class="card qualidade">
-
-                    <h3>🌫️ Qualidade do Ar</h3>
-
-                    <strong id="qualidade-ar">
-                        --
-                    </strong>
-
-                    <p>
-                        Limite de alerta: 400
-                    </p>
 
                 </article>
 
