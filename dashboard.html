@@ -8,13 +8,11 @@
 
     <link rel="stylesheet" href="./index.css">
 
-    <!-- Biblioteca Paho MQTT -->
     <script src="https://unpkg.com/paho-mqtt/mqttws31.min.js"></script>
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
     <header class="header">
         <div class="header-content">
 
@@ -40,10 +38,8 @@
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
     <main class="main">
 
-        <!-- TÍTULO -->
         <section class="intro">
 
             <div>
@@ -57,7 +53,6 @@
                 </p>
             </div>
 
-            <!-- STATUS MQTT -->
             <div class="connection-status">
                 <span id="status-dot" class="status-dot disconnected"></span>
 
@@ -70,10 +65,8 @@
         </section>
 
 
-        <!-- CARDS DOS SENSORES -->
         <section class="sensors">
 
-            <!-- TEMPERATURA -->
             <article class="sensor-card temperature">
 
                 <div class="card-top">
@@ -87,7 +80,7 @@
                 <p class="sensor-name">Temperatura</p>
 
                 <div class="sensor-value">
-                    <span id="temperature">---</span>
+                    <span id="temperature">--</span>
                     <span class="unit">°C</span>
                 </div>
 
@@ -103,7 +96,6 @@
             </article>
 
 
-            <!-- UMIDADE -->
             <article class="sensor-card humidity">
 
                 <div class="card-top">
@@ -117,7 +109,7 @@
                 <p class="sensor-name">Umidade</p>
 
                 <div class="sensor-value">
-                    <span id="humidity">---</span>
+                    <span id="humidity">--</span>
                     <span class="unit">%</span>
                 </div>
 
@@ -133,7 +125,6 @@
             </article>
 
 
-            <!-- QUALIDADE DO AR -->
             <article class="sensor-card air">
 
                 <div class="card-top">
@@ -147,7 +138,7 @@
                 <p class="sensor-name">Qualidade do Ar</p>
 
                 <div class="sensor-value">
-                    <span id="air-quality">---</span>
+                    <span id="air-quality">--</span>
                     <span class="unit">ppm</span>
                 </div>
 
@@ -165,7 +156,6 @@
         </section>
 
 
-        <!-- STATUS DOS ALERTAS -->
         <section class="alerts-section">
 
             <div class="section-title">
@@ -211,7 +201,6 @@
         </section>
 
 
-        <!-- INFORMAÇÕES DA ESTAÇÃO -->
         <section class="info-section">
 
             <div class="info-card">
@@ -254,7 +243,6 @@
     </main>
 
 
-    <!-- BANNER -->
     <section class="project-banner">
         <div>
             <span>PROJETO DE INTERNET DAS COISAS</span>
@@ -269,7 +257,6 @@
     </section>
 
 
-    <!-- RODAPÉ -->
     <footer class="footer">
 
         <p>
