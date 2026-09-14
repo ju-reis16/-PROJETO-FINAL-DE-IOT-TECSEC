@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard IoT | SESI SENAI</title>
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- Biblioteca Paho MQTT -->
+    <script src="https://unpkg.com/paho-mqtt/mqttws31.min.js"></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="header-content">
+
+            <div class="logo-area">
+                <span class="logo-icon">🌐</span>
+
+                <div>
+                    <h1>Estação IoT</h1>
+                    <p>Monitoramento Ambiental</p>
+                </div>
+            </div>
+
+            <nav class="menu">
+                <a href="home.html">Início</a>
+                <a href="sobre.html">Sobre o Projeto</a>
+                <a href="index.html" class="active">Dashboard Ao Vivo</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main">
+
+        <!-- TÍTULO -->
+        <section class="intro">
+
+            <div>
+                <span class="tag">MONITORAMENTO EM TEMPO REAL</span>
+
+                <h2>Dashboard Ao Vivo</h2>
+
+                <p>
+                    Acompanhe os dados ambientais coletados pela
+                    estação IoT através do ESP32.
+                </p>
+            </div>
+
+            <!-- STATUS MQTT -->
+            <div class="connection-status">
+                <span id="status-dot" class="status-dot disconnected"></span>
+
+                <div>
+                    <strong id="mqtt-status">Desconectado</strong>
+                    <small>MQTT WebSocket</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- CARDS DOS SENSORES -->
+        <section class="sensors">
+
+            <!-- TEMPERATURA -->
+            <article class="sensor-card temperature">
+
+                <div class="card-top">
+                    <div class="sensor-icon">🌡️</div>
+
+                    <span id="temperature-alert" class="alert-badge">
+                        Normal
+                    </span>
+                </div>
+
+                <p class="sensor-name">Temperatura</p>
+
+                <div class="sensor-value">
+                    <span id="temperature">---</span>
+                    <span class="unit">°C</span>
+                </div>
+
+                <p class="sensor-description">
+                    Temperatura do ambiente
+                </p>
+
+                <div class="limit">
+                    <span>Limite de alerta</span>
+                    <strong>> 28°C</strong>
+                </div>
+
+            </article>
+
+
+            <!-- UMIDADE -->
+            <article class="sensor-card humidity">
+
+                <div class="card-top">
+                    <div class="sensor-icon">💧</div>
+
+                    <span id="humidity-alert" class="alert-badge">
+                        Normal
+                    </span>
+                </div>
+
+                <p class="sensor-name">Umidade</p>
+
+                <div class="sensor-value">
+                    <span id="humidity">---</span>
+                    <span class="unit">%</span>
+                </div>
+
+                <p class="sensor-description">
+                    Umidade relativa do ambiente
+                </p>
+
+                <div class="limit">
+                    <span>Limite de alerta</span>
+                    <strong>> 56%</strong>
+                </div>
+
+            </article>
+
+
+            <!-- QUALIDADE DO AR -->
+            <article class="sensor-card air">
+
+                <div class="card-top">
+                    <div class="sensor-icon">🌫️</div>
+
+                    <span id="air-alert" class="alert-badge">
+                        Normal
+                    </span>
+                </div>
+
+                <p class="sensor-name">Qualidade do Ar</p>
+
+                <div class="sensor-value">
+                    <span id="air-quality">---</span>
+                    <span class="unit">ppm</span>
+                </div>
+
+                <p class="sensor-description">
+                    Nível detectado pelo sensor MQ-135
+                </p>
+
+                <div class="limit">
+                    <span>Limite de alerta</span>
+                    <strong>> 400 ppm</strong>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- STATUS DOS ALERTAS -->
+        <section class="alerts-section">
+
+            <div class="section-title">
+                <div>
+                    <span class="tag">STATUS</span>
+                    <h3>Indicadores de Alerta</h3>
+                </div>
+            </div>
+
+            <div class="alert-grid">
+
+                <div class="alert-item">
+                    <span id="temp-indicator" class="indicator"></span>
+
+                    <div>
+                        <strong>Temperatura</strong>
+                        <p id="temp-alert-text">Dentro do limite</p>
+                    </div>
+                </div>
+
+
+                <div class="alert-item">
+                    <span id="humidity-indicator" class="indicator"></span>
+
+                    <div>
+                        <strong>Umidade</strong>
+                        <p id="humidity-alert-text">Dentro do limite</p>
+                    </div>
+                </div>
+
+
+                <div class="alert-item">
+                    <span id="air-indicator" class="indicator"></span>
+
+                    <div>
+                        <strong>Qualidade do Ar</strong>
+                        <p id="air-alert-text">Dentro do limite</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMAÇÕES DA ESTAÇÃO -->
+        <section class="info-section">
+
+            <div class="info-card">
+
+                <span class="info-icon">📡</span>
+
+                <div>
+                    <strong>Fonte dos dados</strong>
+                    <p>ESP32 + DHT11 + MQ-135</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-icon">🔄</span>
+
+                <div>
+                    <strong>Atualização</strong>
+                    <p>A cada 3 segundos</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-icon">📶</span>
+
+                <div>
+                    <strong>Protocolo</strong>
+                    <p>MQTT via WebSocket</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- BANNER -->
+    <section class="project-banner">
+        <div>
+            <span>PROJETO DE INTERNET DAS COISAS</span>
+
+            <h2>
+                Projeto IOT SESI SENAI Vinhedo
+                <strong>Grupo 5</strong>
+            </h2>
+        </div>
+
+        <span class="banner-icon">📡</span>
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+
+        <p>
+            Estação de Monitoramento IoT
+        </p>
+
+        <p>
+            SESI SENAI Vinhedo • Projeto acadêmico
+        </p>
+
+    </footer>
+
+
+    <script src="index.js"></script>
+
+</body>
+</html>
