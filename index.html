@@ -124,5 +124,116 @@
                     >
 
                 </article>
+<article class="info arquitetura">
+
+                    <h3>Arquitetura do Projeto</h3>
+
+                    <p>
+                        O funcionamento começa nos sensores, que realizam
+                        as medições. O ESP32 recebe essas informações e
+                        publica os valores nos tópicos MQTT. O broker
+                        Mosquitto recebe as mensagens e o Dashboard Web,
+                        conectado através de WebSockets, recebe os dados
+                        e atualiza os valores na tela em tempo real.
+                    </p>
+
+                    <div class="fluxo">
+
+                        <span>Sensores</span>
+
+                        <strong>→</strong>
+
+                        <span>ESP32</span>
+
+                        <strong>→</strong>
+
+                        <span>MQTT</span>
+
+                        <strong>→</strong>
+
+                        <span>Mosquitto</span>
+
+                        <strong>→</strong>
+
+                        <span>Dashboard</span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </section>
+
+
+        
+
+        <section id="dashboard" class="pagina">
+
+            <div class="dashboard-titulo">
+
+                <h2>Dashboard Ao Vivo</h2>
+
+                <p>
+                    Dados recebidos em tempo real através do MQTT.
+                </p>
+
+            </div>
+
+
+       
+            <section class="cards">
+
+
+         
+                <article class="card temperatura">
+
+                    <h3>🌡️ Temperatura</h3>
+
+                    <strong id="temperatura">
+                        -- °C
+                    </strong>
+
+                    <p>
+                        Limite de alerta: 28°C
+                    </p>
+
+                </article>
+
+
+                <article class="card umidade">
+
+                    <h3>💧 Umidade</h3>
+
+                    <strong id="umidade">
+                        -- %
+                    </strong>
+
+                    <p>
+                        Limite de alerta: 56%
+                    </p>
+
+                </article>
+
+
+                <article class="card qualidade">
+
+                    <h3>🌫️ Qualidade do Ar</h3>
+
+                    <strong id="qualidade-ar">
+                        --
+                    </strong>
+
+                    <p>
+                        Limite de alerta: 400
+                    </p>
+
+                </article>
+
+            </section>
+
+        </section>
+
+    </main>
 
 
