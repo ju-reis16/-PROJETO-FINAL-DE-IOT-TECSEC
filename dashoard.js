@@ -29,3 +29,30 @@ client.onMessageArrived = function (message) {
         qualidadeAr.textContent = valor;
     }
 };
+
+function conectarMQTT() {
+    client.connect({
+        useSSL: false,
+        onSuccess: function () {
+            status.textContent = "● Conectado";
+            status.className = "status conectado";
+            client.subscribe(
+                "aulas/professortupi/temperatura"
+            );
+            client.subscribe(
+                "aulas/professortupi/umidade"
+            );
+            client.subscribe(
+                "aulas/professortupi/qualidade_ar"
+            );
+            console.log("Dashboard conectado ao MQTT");
+        },
+         onFailure: function (erro) {
+            console.error("Erro MQTT:", erro);
+            status.textContent = "● Desconectado";
+            status.className = "status desconectado";
+            setTimeout(conectarMQTT, 3000);
+        }
+    });
+}
+conectarMQTT();
