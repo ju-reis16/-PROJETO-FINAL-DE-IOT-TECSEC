@@ -233,3 +233,23 @@ main {
     background-color: #16452d;
     color: #9bf0b5;
 }
+.dashboard-titulo {
+    background: linear-gradient(135deg, #123b56, #195b7c);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px #00000020;
+}
+
+.dashboard-titulo h2 {
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.dashboard-titulo p {
+    color: #d6e7ef;
+}
