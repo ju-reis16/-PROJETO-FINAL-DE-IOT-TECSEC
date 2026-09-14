@@ -1,4 +1,4 @@
-const broker = "IP_DO_COMPUTADOR";
+const broker = "10.136.42.106";
 const porta = 9001;
 const clientId = "Dashboard-" + Math.random().toString(16).substring(2);
 const client = new Paho.MQTT.Client(
