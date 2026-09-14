@@ -310,3 +310,10 @@ main {
 .dashboard-titulo + .cards .card.umidade strong {
     color: #2498c7;
 }
+.dashboard-titulo + .cards .card.qualidade {
+    border-top: 5px solid #65727c;
+}
+
+.dashboard-titulo + .cards .card.qualidade strong {
+    color: #65727c;
+}
