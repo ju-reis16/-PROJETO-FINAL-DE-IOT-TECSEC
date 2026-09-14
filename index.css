@@ -171,4 +171,19 @@ main {
 } 
 .arquitetura {
     border-left: 5px solid #2498c7;
+} 
+.fluxo {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #eef7fa;
+    border: 1px solid #b9dce9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.fluxo p {
+    color: #123b56;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 15px;
+    margin: 0;
 }
