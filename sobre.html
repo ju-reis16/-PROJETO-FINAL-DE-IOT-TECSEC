@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estação de Monitoramento IoT</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="topo">
+            <h1>Estação de Monitoramento IoT</h1>
+            <p>Grupo TecSec - SESI SENAI Vinhedo</p>
+        </div>
+
+        <nav class="menu">
+            <a href="#sobre">Sobre o Projeto</a>
+            <a href="#hardware">Hardware</a>
+            <a href="#arquitetura">Arquitetura</a>
+            <a href="dashboard.html">Dashboard Ao Vivo</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section id="sobre" class="secao">
+
+            <article class="introducao">
+
+                <h2>Sobre o Projeto</h2>
+
+                
+                <p>
+                    A Estação de Monitoramento IoT é um projeto desenvolvido
+                    para acompanhar informações ambientais em tempo real.
+                    O sistema utiliza um ESP32 conectado a sensores para
+                    realizar a coleta dos dados.
+                </p>
+
+                <p>
+                    Os dados de temperatura, umidade e qualidade do ar são
+                    enviados por meio do protocolo MQTT para o servidor
+                    Mosquitto e apresentados em um Dashboard Web.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <section id="hardware" class="secao">
+
+            
+            <h2>Hardware Utilizado</h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYjgq6W55ZI_cawpw_aqc4MA_9M65KuowhixgK1nb9sg&s=10" alt="ESP32 Dev Module">
+
+                    <h3>ESP32</h3>
+
+                    <p>
+                        O ESP32 é o microcontrolador responsável pela leitura
+                        dos sensores e pelo envio dos dados através da rede Wi-Fi.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb3Hn0iC1Qb_ExsRW6HUsM5nkRN21HGHfnGFDkzxIvVg&s=10" alt="Sensores DHT11 e MQ-135">
+
+                    <h3>Sensores</h3>
+
+                    <p>
+                        O DHT11 realiza a medição da temperatura e da umidade.
+                        O MQ-135 é utilizado para acompanhar a qualidade do ar.
+                    </p>
+
+                </article>
+                
+                <article class="card">
+
+                    <img src="https://m.media-amazon.com/images/I/618jfCqUFnL.jpg" alt="LEDs de alerta">
+
+                    <h3>LEDs de Alerta</h3>
+
+                    <p>
+                        Os LEDs indicam quando os valores dos sensores
+                        ultrapassam os limites definidos no projeto.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section id="arquitetura" class="secao">
+
+            <article class="arquitetura">
+
+                <h2>Arquitetura do Projeto</h2>
+
+                <p>
+                    O ESP32 coleta os dados dos sensores e envia as informações
+                    para o broker Mosquitto utilizando o protocolo MQTT.
+                </p>
+
+                <p>
+                    O Dashboard Web recebe essas informações através de
+                    WebSockets e atualiza os valores apresentados na tela
+                    em tempo real.
+                </p>
+
+                <div class="fluxo">
+
+                    
+                    <p>
+                        ESP32
+                        →
+                        Sensores
+                        →
+                        Wi-Fi
+                        →
+                        Mosquitto
+                        →
+                        WebSocket
+                        →
+                        Dashboard
+                    </p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <section class="secao">
+
+            
+            <article class="alertas">
+
+                <h2>Limites de Alerta</h2>
+
+                <ul>
+                    <li>Temperatura acima de 28°C</li>
+                    <li>Umidade acima de 56%</li>
+                    <li>Qualidade do ar acima de 400</li>
+                </ul>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <p>
+            Integrantes: Júlia Reis, Karen Pereira, Laís Silva, Manuela Camargo e Sofia Boscatti.
+        </p>
+
+        <p>
+            Projeto IOT SESI SENAI Vinhedo - TecSec
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
