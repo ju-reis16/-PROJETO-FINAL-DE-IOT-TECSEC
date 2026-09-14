@@ -187,3 +187,19 @@ main {
     font-size: 15px;
     margin: 0;
 }
+.alertas {
+    border-left: 5px solid #d49b45;
+}
+
+.alertas h2 {
+    color: #b27a26;
+}
+
+.alertas ul {
+    padding-left: 22px;
+}
+
+.alertas li {
+    color: #52606d;
+    margin: 8px 0;
+}
