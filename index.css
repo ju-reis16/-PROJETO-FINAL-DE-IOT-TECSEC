@@ -51,3 +51,42 @@ header {
     color: #c9d8e3;
     margin: 3px 0;
 }
+nav {
+    width: 90%;
+    max-width: 1150px;
+    margin: 20px auto 0;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+nav a {
+    background-color: #174766;
+    color: white;
+    text-decoration: none;
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 7px 7px 0 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background-color: #24749e;
+}
+
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+   ============================== */
+
+main {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+.secao {
+    margin-bottom: 45px;
+}
