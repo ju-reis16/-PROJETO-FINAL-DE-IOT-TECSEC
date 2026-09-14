@@ -296,3 +296,10 @@ main {
     color: #7b8794;
     font-size: 14px;
 }
+.dashboard-titulo + .cards .card.temperatura {
+    border-top: 5px solid #e76f51;
+}
+
+.dashboard-titulo + .cards .card.temperatura strong {
+    color: #e76f51;
+}
