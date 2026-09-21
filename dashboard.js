@@ -28,6 +28,10 @@ const textoAlertaTemperatura = document.getElementById("texto-alerta-temperatura
 const textoAlertaUmidade = document.getElementById("texto-alerta-umidade");
 const textoAlertaAr = document.getElementById("texto-alerta-ar");
 
+const cardTemperatura = temperatura.closest(".sensor-card");
+const cardUmidade = umidade.closest(".sensor-card");
+const cardAr = qualidadeAr.closest(".sensor-card");
+
 client.onConnectionLost = function (resposta) {
     console.error("Conexão perdida:", resposta.errorMessage);
 
@@ -48,12 +52,20 @@ client.onMessageArrived = function (mensagem) {
 
         if (valorTemperatura > 28) {
             alertaTemperatura.textContent = "Alerta";
+            alertaTemperatura.className = "alert-badge alerta";
+
             indicadorTemperatura.className = "indicator alerta";
             textoAlertaTemperatura.textContent = "Acima do limite";
+
+            cardTemperatura.classList.add("alerta");
         } else {
             alertaTemperatura.textContent = "Normal";
+            alertaTemperatura.className = "alert-badge normal";
+
             indicadorTemperatura.className = "indicator normal";
             textoAlertaTemperatura.textContent = "Dentro do limite";
+
+            cardTemperatura.classList.remove("alerta");
         }
     }
 
@@ -64,12 +76,20 @@ client.onMessageArrived = function (mensagem) {
 
         if (valorUmidade > 56) {
             alertaUmidade.textContent = "Alerta";
+            alertaUmidade.className = "alert-badge alerta";
+
             indicadorUmidade.className = "indicator alerta";
             textoAlertaUmidade.textContent = "Acima do limite";
+
+            cardUmidade.classList.add("alerta");
         } else {
             alertaUmidade.textContent = "Normal";
+            alertaUmidade.className = "alert-badge normal";
+
             indicadorUmidade.className = "indicator normal";
             textoAlertaUmidade.textContent = "Dentro do limite";
+
+            cardUmidade.classList.remove("alerta");
         }
     }
 
@@ -80,12 +100,20 @@ client.onMessageArrived = function (mensagem) {
 
         if (valorAr > 200) {
             alertaAr.textContent = "Alerta";
+            alertaAr.className = "alert-badge alerta";
+
             indicadorAr.className = "indicator alerta";
             textoAlertaAr.textContent = "Acima do limite";
+
+            cardAr.classList.add("alerta");
         } else {
             alertaAr.textContent = "Normal";
+            alertaAr.className = "alert-badge normal";
+
             indicadorAr.className = "indicator normal";
             textoAlertaAr.textContent = "Dentro do limite";
+
+            cardAr.classList.remove("alerta");
         }
     }
 };

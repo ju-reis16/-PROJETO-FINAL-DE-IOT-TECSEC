@@ -723,3 +723,14 @@ footer p,
         font-size: 36px;
     }
 }
+
+/* ALERTA DOS SENSORES */
+
+.sensor-card.alerta {
+    background-color: #fff0f0;
+    border-color: #d9534f;
+}
+
+.sensor-card.alerta .sensor-value {
+    color: #d9534f;
+}
