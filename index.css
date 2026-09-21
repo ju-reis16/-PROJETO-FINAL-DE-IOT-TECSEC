@@ -725,9 +725,6 @@ footer p,
         font-size: 36px;
     }
 }
-<<<<<<< HEAD
-
-/* ALERTA DOS SENSORES */
 
 .sensor-card.alerta {
     background-color: #fff0f0;
@@ -737,6 +734,4 @@ footer p,
 .sensor-card.alerta .sensor-value {
     color: #d9534f;
 }
-=======
->>>>>>> a6bed346bf9e89ba9ee195c1cc2645a3e31c9373
->>>>>>> ec773436a1d380d2f574512aab17d792c703a1bd
+
