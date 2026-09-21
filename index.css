@@ -344,6 +344,7 @@ main {
 
 .status-dot.disconnected {
     background-color: #d9534f;
+    color: #d9534f;
 }
 
 .status-dot.connected {
@@ -386,7 +387,7 @@ main {
     padding: 5px 11px;
     border-radius: 15px;
     background-color: #e8f5ed;
-    color: #267447;
+    color: #6a706e;
     font-size: 12px;
     font-weight: bold;
 }
@@ -472,6 +473,24 @@ main {
     border-radius: 50%;
     background-color: #2e9b5b;
     flex-shrink: 0;
+}
+
+.indicator.normal {
+    background-color: #2e9b5b;
+}
+
+.indicator.alerta {
+    background-color: #d9534f;
+}
+
+.alert-badge.normal {
+    background-color: #e8f5ed;
+    color: #2e9b5b;
+}
+
+.alert-badge.alerta {
+    background-color: #fde8e8;
+    color: #d9534f;
 }
 
 .alert-item strong {
