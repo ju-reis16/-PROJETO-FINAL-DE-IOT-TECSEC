@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dashboard IoT | SESI SENAI</title>
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./index.css">
 
-    <!-- Biblioteca Paho MQTT -->
+<<<<<<< HEAD
+=======
     <script src="https://unpkg.com/paho-mqtt/mqttws31.min.js"></script>
+>>>>>>> 1fe0cc23fdfdd8ccf0f489c0fe998fb2ff1f85b8
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
     <header class="header">
+
         <div class="header-content">
 
-            <div class="logo-area">
-                <span class="logo-icon">🌐</span>
+            <div class="topo">
 
-                <div>
-                    <h1>Estação IoT</h1>
-                    <p>Monitoramento Ambiental</p>
+                <div class="identificacao">
+
+                    <h1>Estação de Monitoramento IoT</h1>
+
+                    <p>Grupo TecSec — SENAI Vinhedo</p>
+
+                    <p>Turma: 3° ano SENAI</p>
+
                 </div>
+
             </div>
 
             <nav class="menu">
+
                 <a href="index.html">Início</a>
+
                 <a href="sobre.html">Sobre o Projeto</a>
-                <a href="dashboard.html" class="active">Dashboard Ao Vivo</a>
+
+                <a href="dashboard.html" class="active">
+                    Dashboard Ao Vivo
+                </a>
+
             </nav>
 
         </div>
+
     </header>
 
+<<<<<<< HEAD
+
     <!-- CONTEÚDO PRINCIPAL -->
+=======
+>>>>>>> 1fe0cc23fdfdd8ccf0f489c0fe998fb2ff1f85b8
     <main class="main">
 
-        <!-- TÍTULO -->
         <section class="intro">
 
             <div>
-                <span class="tag">MONITORAMENTO EM TEMPO REAL</span>
+
+                <span class="tag">
+                    MONITORAMENTO EM TEMPO REAL
+                </span>
 
                 <h2>Dashboard Ao Vivo</h2>
 
@@ -51,40 +72,80 @@
                     Acompanhe os dados ambientais coletados pela
                     estação IoT através do ESP32.
                 </p>
+
             </div>
 
+<<<<<<< HEAD
+
             <!-- STATUS MQTT -->
+=======
+>>>>>>> 1fe0cc23fdfdd8ccf0f489c0fe998fb2ff1f85b8
             <div class="connection-status">
-                <span id="status-dot" class="status-dot disconnected"></span>
+
+                <span
+                    id="ponto-status"
+                    class="status-dot desconectado">
+                </span>
 
                 <div>
-                    <strong id="mqtt-status">Desconectado</strong>
-                    <small>MQTT WebSocket</small>
+
+                    <strong id="status-mqtt">
+                        Desconectado
+                    </strong>
+
+                    <small>
+                        MQTT WebSocket
+                    </small>
+
                 </div>
+
             </div>
 
         </section>
 
 
-        <!-- CARDS DOS SENSORES -->
         <section class="sensors">
 
+<<<<<<< HEAD
+
             <!-- TEMPERATURA -->
+=======
+>>>>>>> 1fe0cc23fdfdd8ccf0f489c0fe998fb2ff1f85b8
             <article class="sensor-card temperature">
 
                 <div class="card-top">
-                    <div class="sensor-icon">🌡️</div>
 
-                    <span id="temperature-alert" class="alert-badge">
+                    <div class="sensor-icon">
+                        🌡️
+                    </div>
+
+                    <span
+                        id="alerta-temperatura"
+                        class="alert-badge">
                         Normal
                     </span>
+
                 </div>
 
-                <p class="sensor-name">Temperatura</p>
+                <p class="sensor-name">
+                    Temperatura
+                </p>
 
                 <div class="sensor-value">
-                    <span id="temperature">---</span>
+<<<<<<< HEAD
+
+                    <span id="temperatura">
+                        ---
+                    </span>
+
+                    <span class="unit">
+                        °C
+                    </span>
+
+=======
+                    <span id="temperature">--</span>
                     <span class="unit">°C</span>
+>>>>>>> 1fe0cc23fdfdd8ccf0f489c0fe998fb2ff1f85b8
                 </div>
 
                 <p class="sensor-description">
@@ -92,29 +153,55 @@
                 </p>
 
                 <div class="limit">
-                    <span>Limite de alerta</span>
-                    <strong>> 28°C</strong>
+
+                    <span>
+                        Limite de alerta
+                    </span>
+
+                    <strong>
+                        &gt; 28°C
+                    </strong>
+
                 </div>
 
             </article>
 
 
-            <!-- UMIDADE -->
             <article class="sensor-card humidity">
 
                 <div class="card-top">
-                    <div class="sensor-icon">💧</div>
 
-                    <span id="humidity-alert" class="alert-badge">
+                    <div class="sensor-icon">
+                        💧
+                    </div>
+
+                    <span
+                        id="alerta-umidade"
+                        class="alert-badge">
                         Normal
                     </span>
+
                 </div>
 
-                <p class="sensor-name">Umidade</p>
+                <p class="sensor-name">
+                    Umidade
+                </p>
 
                 <div class="sensor-value">
-                    <span id="humidity">---</span>
+<<<<<<< HEAD
+
+                    <span id="umidade">
+                        ---
+                    </span>
+
+                    <span class="unit">
+                        %
+                    </span>
+
+=======
+                    <span id="humidity">--</span>
                     <span class="unit">%</span>
+>>>>>>> 1fe0cc23fdfdd8ccf0f489c0fe998fb2ff1f85b8
                 </div>
 
                 <p class="sensor-description">
@@ -122,29 +209,55 @@
                 </p>
 
                 <div class="limit">
-                    <span>Limite de alerta</span>
-                    <strong>> 56%</strong>
+
+                    <span>
+                        Limite de alerta
+                    </span>
+
+                    <strong>
+                        &gt; 56%
+                    </strong>
+
                 </div>
 
             </article>
 
 
-            <!-- QUALIDADE DO AR -->
             <article class="sensor-card air">
 
                 <div class="card-top">
-                    <div class="sensor-icon">🌫️</div>
 
-                    <span id="air-alert" class="alert-badge">
+                    <div class="sensor-icon">
+                        🌫️
+                    </div>
+
+                    <span
+                        id="alerta-ar"
+                        class="alert-badge">
                         Normal
                     </span>
+
                 </div>
 
-                <p class="sensor-name">Qualidade do Ar</p>
+                <p class="sensor-name">
+                    Qualidade do Ar
+                </p>
 
                 <div class="sensor-value">
-                    <span id="air-quality">---</span>
+<<<<<<< HEAD
+
+                    <span id="qualidade-ar">
+                        ---
+                    </span>
+
+                    <span class="unit">
+                        ppm
+                    </span>
+
+=======
+                    <span id="air-quality">--</span>
                     <span class="unit">ppm</span>
+>>>>>>> 1fe0cc23fdfdd8ccf0f489c0fe998fb2ff1f85b8
                 </div>
 
                 <p class="sensor-description">
@@ -152,8 +265,15 @@
                 </p>
 
                 <div class="limit">
-                    <span>Limite de alerta</span>
-                    <strong>> 400 ppm</strong>
+
+                    <span>
+                        Limite de alerta
+                    </span>
+
+                    <strong>
+                        &gt; 200 ppm
+                    </strong>
+
                 </div>
 
             </article>
@@ -161,45 +281,94 @@
         </section>
 
 
-        <!-- STATUS DOS ALERTAS -->
         <section class="alerts-section">
 
             <div class="section-title">
+
                 <div>
-                    <span class="tag">STATUS</span>
-                    <h3>Indicadores de Alerta</h3>
+
+                    <span class="tag">
+                        STATUS
+                    </span>
+
+                    <h3>
+                        Indicadores de Alerta
+                    </h3>
+
                 </div>
+
             </div>
+
 
             <div class="alert-grid">
 
+
+                <!-- ALERTA TEMPERATURA -->
                 <div class="alert-item">
-                    <span id="temp-indicator" class="indicator"></span>
+
+                    <span
+                        id="indicador-temperatura"
+                        class="indicator">
+                    </span>
 
                     <div>
-                        <strong>Temperatura</strong>
-                        <p id="temp-alert-text">Dentro do limite</p>
+
+                        <strong>
+                            Temperatura
+                        </strong>
+
+                        <p id="texto-alerta-temperatura">
+                            Dentro do limite
+                        </p>
+
                     </div>
+
                 </div>
 
 
+                <!-- ALERTA UMIDADE -->
                 <div class="alert-item">
-                    <span id="humidity-indicator" class="indicator"></span>
+
+                    <span
+                        id="indicador-umidade"
+                        class="indicator">
+                    </span>
 
                     <div>
-                        <strong>Umidade</strong>
-                        <p id="humidity-alert-text">Dentro do limite</p>
+
+                        <strong>
+                            Umidade
+                        </strong>
+
+                        <p id="texto-alerta-umidade">
+                            Dentro do limite
+                        </p>
+
                     </div>
+
                 </div>
 
 
+                <!-- ALERTA AR -->
                 <div class="alert-item">
-                    <span id="air-indicator" class="indicator"></span>
+
+                    <span
+                        id="indicador-ar"
+                        class="indicator">
+                    </span>
 
                     <div>
-                        <strong>Qualidade do Ar</strong>
-                        <p id="air-alert-text">Dentro do limite</p>
+
+                        <strong>
+                            Qualidade do Ar
+                        </strong>
+
+                        <p id="texto-alerta-ar">
+                            Dentro do limite
+                        </p>
+
                     </div>
+
                 </div>
 
             </div>
@@ -207,16 +376,25 @@
         </section>
 
 
-        <!-- INFORMAÇÕES DA ESTAÇÃO -->
         <section class="info-section">
 
+
             <div class="info-card">
 
-                <span class="info-icon">📡</span>
+                <span class="info-icon">
+                    📡
+                </span>
 
                 <div>
-                    <strong>Fonte dos dados</strong>
-                    <p>ESP32 + DHT11 + MQ-135</p>
+
+                    <strong>
+                        Fonte dos dados
+                    </strong>
+
+                    <p>
+                        ESP32 + DHT11 + MQ-135
+                    </p>
+
                 </div>
 
             </div>
@@ -224,11 +402,20 @@
 
             <div class="info-card">
 
-                <span class="info-icon">🔄</span>
+                <span class="info-icon">
+                    🔄
+                </span>
 
                 <div>
-                    <strong>Atualização</strong>
-                    <p>A cada 3 segundos</p>
+
+                    <strong>
+                        Atualização
+                    </strong>
+
+                    <p>
+                        A cada 3 segundos
+                    </p>
+
                 </div>
 
             </div>
@@ -236,11 +423,20 @@
 
             <div class="info-card">
 
-                <span class="info-icon">📶</span>
+                <span class="info-icon">
+                    📶
+                </span>
 
                 <div>
-                    <strong>Protocolo</strong>
-                    <p>MQTT via WebSocket</p>
+
+                    <strong>
+                        Protocolo
+                    </strong>
+
+                    <p>
+                        MQTT via WebSocket
+                    </p>
+
                 </div>
 
             </div>
@@ -250,22 +446,33 @@
     </main>
 
 
-    <!-- BANNER -->
     <section class="project-banner">
+
         <div>
-            <span>PROJETO DE INTERNET DAS COISAS</span>
+
+            <span>
+                PROJETO DE INTERNET DAS COISAS
+            </span>
 
             <h2>
+
                 Projeto IOT SESI SENAI Vinhedo
-                <strong>Grupo 5</strong>
+
+                <strong>
+                    Grupo 5
+                </strong>
+
             </h2>
+
         </div>
 
-        <span class="banner-icon">📡</span>
+        <span class="banner-icon">
+            📡
+        </span>
+
     </section>
 
 
-    <!-- RODAPÉ -->
     <footer class="footer">
 
         <p>
@@ -279,7 +486,10 @@
     </footer>
 
 
-    <script src="index.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/paho-mqtt@1.1.0/paho-mqtt-min.js"></script>
+    <script src="./dashboard.js"></script>
 
 </body>
+
 </html>
